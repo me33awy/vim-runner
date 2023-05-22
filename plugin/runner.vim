@@ -35,8 +35,15 @@ fun PyRun()
 		term python3 %:p
 	en
 endf
+
+fun MdRun()
+	if g:FileExtention ==? "md"
+		term grip %:p
+	endif
+endf
+
 fun RunCode()
-	let language = ['js', 'py', 'tex']
+	let language = ['js', 'py', 'tex', 'md']
 	for ext in language
 		if ext ==? 'js'
 			cal JsRun()
@@ -44,6 +51,8 @@ fun RunCode()
 			cal TexRun()
 		elseif ext ==? 'py'
 			cal PyRun()
+		elseif ext ==? 'md'
+			cal MdRun()
 		else
 			echo "Not Supported Language"
 		endif
