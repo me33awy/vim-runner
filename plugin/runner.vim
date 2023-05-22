@@ -4,16 +4,19 @@ fun TexRun()
 	if g:FileExtention ==? 'tex'
 		cd %:p:h
 		w
-		silent !pdflatex %:p
+		set makeprg=pdflatex\ -synctex=1\ -interaction=nonstopmode\ %:p
+		silent make
 		cd -
+		cbottom
 		redraw!
-	else
-		echo 'Not Supporting Language Yet'
 	en
 endf
 fun g:OpenFile()
 	cd %:p:h
-	silent !zathura %:p:t:r.pdf & disown
+	let option1 = '--synctex-forward '
+	let option2 = line('.') .. ":" .. col('.') .. ":" .. "%:p"
+	exec "silent !zathura %:p:t:r.pdf " .. option1 .. option2 .. '& disown'
+	redraw!
 	cd -
 endf
 
@@ -33,9 +36,18 @@ fun PyRun()
 	en
 endf
 fun RunCode()
-	call TexRun()
-	call JsRun()
-	call PyRun()
+	let language = ['js', 'py', 'tex']
+	for ext in language
+		if ext ==? 'js'
+			cal JsRun()
+		elseif ext ==? 'tex'
+			cal TexRun()
+		elseif ext ==? 'py'
+			cal PyRun()
+		else
+			echo "Not Supported Language"
+		endif
+	endfor
 endf	
 
-nnoremap <buffer> <leader>c :call RunCode()<cr>
+nnoremap <leader>c :call RunCode()<cr>
