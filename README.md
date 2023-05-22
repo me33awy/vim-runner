@@ -8,9 +8,9 @@ Many of vim plugins using a lot of lines to just make a simple task like run com
 >Note vim-runner will autoload once you clone it but that notes for sure it works well
 ## Usage
 
-> To use **vim-runner** hit your `<leader>`c for compile file
+> To use **vim-runner** hit your `<leader>` c for compile file
 >
-> On **LaTeX** document you can hit `<leader>`r to open **PDF** file which will created from compile
+> On **LaTeX** document you can hit `<leader>` r to open **PDF** file which will created from compile
 
 ## Tips
 vim-runner plugin needs some tools to run languages code like `Python` or `JavaScript` such as Node.js
