@@ -1,10 +1,30 @@
-function Run()
-	let filetype = &filetype
-	if filetype == 'javascript'
-		:term node %:p
-	else 
-		echo 'Sorry this plugin is for js files'
+" maping only open tex buffer
+let g:FileExtention=expand('%:p:e')
+fun TexRun()
+	if g:FileExtention ==? 'tex'
+		term pdflatex %:p
+		fun OpenFile()
+			term zathura %:p:t:r.pdf 
+		endfun
+		nnoremap <leader>r :call OpenFile()<cr>
 	endif
-endfunction
+endfun
 
-map <leader>r :call Run()<cr>
+fun JsRun()
+    if g:FileExtention ==? 'js'
+        term node %:p
+    endif
+endfun
+
+fun PyRun()
+    if g:FileExtention ==? 'py'
+        term python3 %:p
+    endif
+endfun
+fun RunCode()
+	call TexRun()
+    call JsRun()
+    call PyRun()
+endfun
+
+nnoremap <buffer> <leader>c :call RunCode()<cr>
