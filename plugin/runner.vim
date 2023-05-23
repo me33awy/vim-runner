@@ -38,7 +38,7 @@ endf
 
 fun MdRun()
 	if g:FileExtention ==? "md"
-		term grip %:p
+		term grip -b %:p
 	endif
 endf
 

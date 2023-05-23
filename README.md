@@ -1,7 +1,5 @@
 # vim-runner
-
 Many of vim plugins using a lot of lines to just make a simple task like run command or open **PDF** files. that isn't my philosphy or any linux user I think? 
-<video src="./video.mp4" width="320" height="240" controls></video>
 
 ## Installation
 > If you're **Git** user or any **VCS** it's simple just clone a **Github** repo in your .vim directory and source the runner.vim file in plugin directory
@@ -17,3 +15,4 @@ Many of vim plugins using a lot of lines to just make a simple task like run com
 
 ## Tips
 vim-runner plugin needs some tools to run languages code like `Python` or `JavaScript` such as Node.js
+
