@@ -6,7 +6,7 @@ Many of vim plugins using a lot of lines to just make a simple task like run com
 >
 >Note vim-runner will autoload once you clone it but that notes for sure it works well
 >
->If you use plugins manager like **vim--plug** you can use `plug 'https://github.com/me33awy/vim-runner'` to install vim-runner
+> If you use plugins manager like **vim--plug** you can use `plug 'https://github.com/me33awy/vim-runner'` to install vim-runner
 ## Usage
 
 > To use **vim-runner** hit your `<leader>` c for compile file
