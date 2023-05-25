@@ -7,6 +7,7 @@ fun TexRun()
 		silent make
 		cd -
 		cbottom
+		redraw!
 	en
 endf
 
